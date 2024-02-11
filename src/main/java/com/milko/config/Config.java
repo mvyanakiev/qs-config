@@ -16,11 +16,4 @@ public class Config {
     public static final String TX_FREQ = "TxFreq";
     public static final String RX_FREQ = "RxFreq";
 
-    //TODO
-
-
-
-
-
-
 }

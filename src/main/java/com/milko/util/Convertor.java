@@ -2,7 +2,6 @@ package com.milko.util;
 
 import com.milko.model.Channel;
 import com.milko.model.ChannelToDto;
-import com.milko.model.ChannelsWrapper;
 import com.milko.model.XmlChannelDto;
 
 import static com.milko.config.Config.CSV_SEPARATOR;
@@ -67,8 +66,8 @@ public class Convertor {
 
         channelToDto.setName(channel.getName());
         channelToDto.setChanIndex(String.valueOf(channel.getChanIndex()));
-        channelToDto.setRxFreq(String.valueOf(channel.getRxFreq())); //  TODO tochka zapetaya
-        channelToDto.setTxFreq(String.valueOf(channel.getTxFreq()));
+        channelToDto.setRxFreq(String.valueOf(channel.getRxFreq()).replace(".", ","));
+        channelToDto.setTxFreq(String.valueOf(channel.getTxFreq()).replace(".", ","));
 
         return channelToDto;
     }
