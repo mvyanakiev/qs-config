@@ -106,7 +106,10 @@ public class CsvUtil {
             }
 
             Channel channel = convertCsvLineToChannel(line);
-            result.add(channel);
+
+            if (channel != null) {
+                result.add(channel);
+            }
         }
         scanner.close();
 

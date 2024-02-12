@@ -4,6 +4,8 @@ import com.milko.model.Channel;
 import com.milko.model.ChannelToDto;
 import com.milko.model.XmlChannelDto;
 
+import java.util.Optional;
+
 import static com.milko.config.Config.CSV_SEPARATOR;
 
 public class Convertor {
@@ -73,28 +75,34 @@ public class Convertor {
     }
 
     public static Channel convertCsvLineToChannel(String line) {
-        Channel channel = new Channel();
 
-        String[] tokens = line.split(CSV_SEPARATOR);
-        channel.setName(tokens[0]);
-        channel.setChanIndex(Integer.parseInt(tokens[1]));
-        channel.setBandWidth(Integer.parseInt(tokens[2]));
-        channel.setTxFreq(Double.parseDouble(tokens[3]));
-        channel.setRxFreq(Double.parseDouble(tokens[4]));
-        channel.setTxPowerLevel(Integer.parseInt(tokens[5]));
-        channel.setAnaTxCTCFlag(Integer.parseInt(tokens[6]));
-        channel.setAnaRxCTCFlag(Integer.parseInt(tokens[7]));
-        channel.setAnaTxCTCIndex(Integer.parseInt(tokens[8]));
-        channel.setAnaRxCTCIndex(Integer.parseInt(tokens[9]));
-        channel.setFreqStep(Integer.parseInt(tokens[10]));
-        channel.setFreqReverseFlag(Integer.parseInt(tokens[11]));
-        channel.setEncryptFlag(Integer.parseInt(tokens[12]));
-        channel.setBusyNoTx(Integer.parseInt(tokens[13]));
-        channel.setPttIdFlag(Integer.parseInt(tokens[14]));
-        channel.setDtmfDecode(Integer.parseInt(tokens[15]));
-        channel.setAmChanFlag(Integer.parseInt(tokens[16]));
+        try {
+            Channel channel = new Channel();
 
-        return channel;
+            String[] tokens = line.split(CSV_SEPARATOR);
+            channel.setName(tokens[0]);
+            channel.setChanIndex(Integer.parseInt(tokens[1]));
+            channel.setBandWidth(Integer.parseInt(tokens[2]));
+            channel.setTxFreq(Double.parseDouble(tokens[3]));
+            channel.setRxFreq(Double.parseDouble(tokens[4]));
+            channel.setTxPowerLevel(Integer.parseInt(tokens[5]));
+            channel.setAnaTxCTCFlag(Integer.parseInt(tokens[6]));
+            channel.setAnaRxCTCFlag(Integer.parseInt(tokens[7]));
+            channel.setAnaTxCTCIndex(Integer.parseInt(tokens[8]));
+            channel.setAnaRxCTCIndex(Integer.parseInt(tokens[9]));
+            channel.setFreqStep(Integer.parseInt(tokens[10]));
+            channel.setFreqReverseFlag(Integer.parseInt(tokens[11]));
+            channel.setEncryptFlag(Integer.parseInt(tokens[12]));
+            channel.setBusyNoTx(Integer.parseInt(tokens[13]));
+            channel.setPttIdFlag(Integer.parseInt(tokens[14]));
+            channel.setDtmfDecode(Integer.parseInt(tokens[15]));
+            channel.setAmChanFlag(Integer.parseInt(tokens[16]));
+            return channel;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
     public static ChannelToDto convertChannelToChannelToDto(Channel channel) {
