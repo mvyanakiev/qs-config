@@ -17,9 +17,7 @@ import static com.milko.util.FileUtil.readFile;
 public class Main {
     public static void main(String[] args) throws JAXBException, IOException {
         List<Channel> result = new ArrayList<>();
-
         XmlChannelRootDto xmlOrdersImportRootDto = XmlUtil.readXml();
-
 
         for (XmlChannelDto xmlChannelDto : xmlOrdersImportRootDto.getXmlChannelImportDto()) {
             Channel channel = convertXmlDtoToChannel(xmlChannelDto);

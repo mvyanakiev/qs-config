@@ -13,8 +13,20 @@ public class Convertor {
         channel.setName(xmlChannelDto.getName());
         channel.setChanIndex(xmlChannelDto.getChanIndex());
         channel.setBandWidth(Integer.parseInt(xmlChannelDto.getBandWidth()));
-        channel.setRxFreq(Double.parseDouble(xmlChannelDto.getRxFreq().replace(",", ".")));
         channel.setTxFreq(Double.parseDouble(xmlChannelDto.getTxFreq().replace(",", ".")));
+        channel.setRxFreq(Double.parseDouble(xmlChannelDto.getRxFreq().replace(",", ".")));
+        channel.setTxPowerLevel(Integer.parseInt(xmlChannelDto.getTxPowerLevel()));
+        channel.setAnaTxCTCFlag(Integer.parseInt(xmlChannelDto.getAnaTxCTCFlag()));
+        channel.setAnaRxCTCFlag(Integer.parseInt(xmlChannelDto.getAnaRxCTCFlag()));
+        channel.setAnaTxCTCIndex(Integer.parseInt(xmlChannelDto.getAnaTxCTCIndex()));
+        channel.setAnaRxCTCIndex(Integer.parseInt(xmlChannelDto.getAnaRxCTCIndex()));
+        channel.setFreqStep(Integer.parseInt(xmlChannelDto.getFreqStep()));
+        channel.setFreqReverseFlag(Integer.parseInt(xmlChannelDto.getFreqReverseFlag()));
+        channel.setEncryptFlag(Integer.parseInt(xmlChannelDto.getEncryptFlag()));
+        channel.setBusyNoTx(Integer.parseInt(xmlChannelDto.getBusyNoTx()));
+        channel.setPttIdFlag(Integer.parseInt(xmlChannelDto.getPttIdFlag()));
+        channel.setDtmfDecode(Integer.parseInt(xmlChannelDto.getDtmfDecode()));
+        channel.setAmChanFlag(Integer.parseInt(xmlChannelDto.getAmChanFlag()));
 
         return channel;
     }
@@ -23,42 +35,66 @@ public class Convertor {
         StringBuilder sb = new StringBuilder();
 
         sb
-                .append(channel.getChanIndex())
-                .append(CSV_SEPARATOR)
                 .append(channel.getName())
+                .append(CSV_SEPARATOR)
+                .append(channel.getChanIndex())
                 .append(CSV_SEPARATOR)
                 .append(channel.getBandWidth())
                 .append(CSV_SEPARATOR)
                 .append(channel.getTxFreq())
                 .append(CSV_SEPARATOR)
-                .append(channel.getRxFreq());
+                .append(channel.getRxFreq())
+                .append(CSV_SEPARATOR)
+                .append(channel.getTxPowerLevel())
+                .append(CSV_SEPARATOR)
+                .append(channel.getAnaTxCTCFlag())
+                .append(CSV_SEPARATOR)
+                .append(channel.getAnaRxCTCFlag())
+                .append(CSV_SEPARATOR)
+                .append(channel.getAnaTxCTCIndex())
+                .append(CSV_SEPARATOR)
+                .append(channel.getAnaRxCTCIndex())
+                .append(CSV_SEPARATOR)
+                .append(channel.getFreqStep())
+                .append(CSV_SEPARATOR)
+                .append(channel.getFreqReverseFlag())
+                .append(CSV_SEPARATOR)
+                .append(channel.getEncryptFlag())
+                .append(CSV_SEPARATOR)
+                .append(channel.getBusyNoTx())
+                .append(CSV_SEPARATOR)
+                .append(channel.getPttIdFlag())
+                .append(CSV_SEPARATOR)
+                .append(channel.getDtmfDecode())
+                .append(CSV_SEPARATOR)
+                .append(channel.getAmChanFlag());
 
         return sb.toString();
     }
 
     public static Channel convertCsvLineToChannel(String line) {
-
         Channel channel = new Channel();
 
         String[] tokens = line.split(CSV_SEPARATOR);
-        channel.setName(tokens[1]);
-        channel.setChanIndex(Integer.parseInt(tokens[0]));
+        channel.setName(tokens[0]);
+        channel.setChanIndex(Integer.parseInt(tokens[1]));
         channel.setBandWidth(Integer.parseInt(tokens[2]));
         channel.setTxFreq(Double.parseDouble(tokens[3]));
         channel.setRxFreq(Double.parseDouble(tokens[4]));
+        channel.setTxPowerLevel(Integer.parseInt(tokens[5]));
+        channel.setAnaTxCTCFlag(Integer.parseInt(tokens[6]));
+        channel.setAnaRxCTCFlag(Integer.parseInt(tokens[7]));
+        channel.setAnaTxCTCIndex(Integer.parseInt(tokens[8]));
+        channel.setAnaRxCTCIndex(Integer.parseInt(tokens[9]));
+        channel.setFreqStep(Integer.parseInt(tokens[10]));
+        channel.setFreqReverseFlag(Integer.parseInt(tokens[11]));
+        channel.setEncryptFlag(Integer.parseInt(tokens[12]));
+        channel.setBusyNoTx(Integer.parseInt(tokens[13]));
+        channel.setPttIdFlag(Integer.parseInt(tokens[14]));
+        channel.setDtmfDecode(Integer.parseInt(tokens[15]));
+        channel.setAmChanFlag(Integer.parseInt(tokens[16]));
 
         return channel;
-    }
-
-    public static XmlChannelDto convertChannelToXmlChannelDto(Channel channel) {
-        XmlChannelDto xmlChannelDto = new XmlChannelDto();
-
-        xmlChannelDto.setName(channel.getName());
-        xmlChannelDto.setChanIndex(channel.getChanIndex());
-        xmlChannelDto.setRxFreq(String.valueOf(channel.getRxFreq()));
-        xmlChannelDto.setTxFreq(String.valueOf(channel.getTxFreq()));
-
-        return xmlChannelDto;
     }
 
     public static ChannelToDto convertChannelToChannelToDto(Channel channel) {
@@ -66,13 +102,22 @@ public class Convertor {
 
         channelToDto.setName(channel.getName());
         channelToDto.setChanIndex(String.valueOf(channel.getChanIndex()));
-        channelToDto.setRxFreq(String.valueOf(channel.getRxFreq()).replace(".", ","));
+        channelToDto.setBandWidth(String.valueOf(channel.getBandWidth()));
         channelToDto.setTxFreq(String.valueOf(channel.getTxFreq()).replace(".", ","));
+        channelToDto.setRxFreq(String.valueOf(channel.getRxFreq()).replace(".", ","));
+        channelToDto.setTxPowerLevel(channel.getTxPowerLevel());
+        channelToDto.setAnaTxCTCFlag(channel.getAnaTxCTCFlag());
+        channelToDto.setAnaRxCTCFlag(channel.getAnaRxCTCFlag());
+        channelToDto.setAnaTxCTCIndex(channel.getAnaTxCTCIndex());
+        channelToDto.setAnaRxCTCIndex(channel.getAnaRxCTCIndex());
+        channelToDto.setFreqStep(channel.getFreqStep());
+        channelToDto.setFreqReverseFlag(channel.getFreqReverseFlag());
+        channelToDto.setEncryptFlag(channel.getEncryptFlag());
+        channelToDto.setBusyNoTx(channel.getBusyNoTx());
+        channelToDto.setPttIdFlag(channel.getPttIdFlag());
+        channelToDto.setDtmfDecode(channel.getDtmfDecode());
+        channelToDto.setAmChanFlag(channel.getAmChanFlag());
 
         return channelToDto;
     }
-
-
-
-
 }
