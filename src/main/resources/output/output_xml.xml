@@ -833,7 +833,7 @@
         <DTMFDecode>0</DTMFDecode>
         <AMChanFlag>0</AMChanFlag>
     </Channel>
-    <Channel Name="PSS Vi" chanIndex="49">
+    <Channel Name="PSS Vit" chanIndex="49">
         <BandWidth>1</BandWidth>
         <TxFreq>27,0</TxFreq>
         <RxFreq>147,85</RxFreq>
@@ -842,7 +842,7 @@
         <AnaRxCTCFlag>0</AnaRxCTCFlag>
         <AnaTxCTCIndex>0</AnaTxCTCIndex>
         <AnaRxCTCIndex>0</AnaRxCTCIndex>
-        <FreqStep>1</FreqStep>
+        <FreqStep>2</FreqStep>
         <FreqReverseFlag>0</FreqReverseFlag>
         <EncryptFlag>0</EncryptFlag>
         <BusyNoTx>0</BusyNoTx>
@@ -850,7 +850,7 @@
         <DTMFDecode>0</DTMFDecode>
         <AMChanFlag>0</AMChanFlag>
     </Channel>
-    <Channel Name="PSS Bo" chanIndex="50">
+    <Channel Name="PSS Bor" chanIndex="50">
         <BandWidth>1</BandWidth>
         <TxFreq>27,0</TxFreq>
         <RxFreq>157,825</RxFreq>
@@ -859,7 +859,7 @@
         <AnaRxCTCFlag>0</AnaRxCTCFlag>
         <AnaTxCTCIndex>0</AnaTxCTCIndex>
         <AnaRxCTCIndex>0</AnaRxCTCIndex>
-        <FreqStep>1</FreqStep>
+        <FreqStep>2</FreqStep>
         <FreqReverseFlag>0</FreqReverseFlag>
         <EncryptFlag>0</EncryptFlag>
         <BusyNoTx>0</BusyNoTx>
@@ -918,7 +918,7 @@
         <DTMFDecode>0</DTMFDecode>
         <AMChanFlag>0</AMChanFlag>
     </Channel>
-    <Channel Name="Ambulance 1" chanIndex="56">
+    <Channel Name="Amb 1" chanIndex="56">
         <BandWidth>0</BandWidth>
         <TxFreq>27,0</TxFreq>
         <RxFreq>146,9</RxFreq>
@@ -927,7 +927,7 @@
         <AnaRxCTCFlag>0</AnaRxCTCFlag>
         <AnaTxCTCIndex>0</AnaTxCTCIndex>
         <AnaRxCTCIndex>0</AnaRxCTCIndex>
-        <FreqStep>1</FreqStep>
+        <FreqStep>2</FreqStep>
         <FreqReverseFlag>0</FreqReverseFlag>
         <EncryptFlag>0</EncryptFlag>
         <BusyNoTx>0</BusyNoTx>
@@ -935,7 +935,7 @@
         <DTMFDecode>0</DTMFDecode>
         <AMChanFlag>0</AMChanFlag>
     </Channel>
-    <Channel Name="Ambulance 2" chanIndex="57">
+    <Channel Name="Amb 2" chanIndex="57">
         <BandWidth>0</BandWidth>
         <TxFreq>27,0</TxFreq>
         <RxFreq>146,925</RxFreq>
@@ -944,7 +944,7 @@
         <AnaRxCTCFlag>0</AnaRxCTCFlag>
         <AnaTxCTCIndex>0</AnaTxCTCIndex>
         <AnaRxCTCIndex>0</AnaRxCTCIndex>
-        <FreqStep>1</FreqStep>
+        <FreqStep>2</FreqStep>
         <FreqReverseFlag>0</FreqReverseFlag>
         <EncryptFlag>0</EncryptFlag>
         <BusyNoTx>0</BusyNoTx>
@@ -952,7 +952,7 @@
         <DTMFDecode>0</DTMFDecode>
         <AMChanFlag>0</AMChanFlag>
     </Channel>
-    <Channel Name="Ambulance 3" chanIndex="58">
+    <Channel Name="Amb 3" chanIndex="58">
         <BandWidth>0</BandWidth>
         <TxFreq>27,0</TxFreq>
         <RxFreq>146,95</RxFreq>
@@ -961,7 +961,7 @@
         <AnaRxCTCFlag>0</AnaRxCTCFlag>
         <AnaTxCTCIndex>0</AnaTxCTCIndex>
         <AnaRxCTCIndex>0</AnaRxCTCIndex>
-        <FreqStep>1</FreqStep>
+        <FreqStep>2</FreqStep>
         <FreqReverseFlag>0</FreqReverseFlag>
         <EncryptFlag>0</EncryptFlag>
         <BusyNoTx>0</BusyNoTx>
